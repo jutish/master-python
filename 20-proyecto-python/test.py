@@ -1,9 +1,26 @@
 import sqlite3
+import hashlib
+import usuarios.conexion as cnx
+import usuarios.usuario as modelo
 
-#Conexion SQLite
-database = sqlite3.connect('sq_master_python')
-cursor =  database.cursor()
-cursor.execute("SELECT * FROM USUARIOS")
-print(cursor.rowcount)
-print(cursor.fetchall())
+# #Conexion SQLite
+# conectar = cnx.conectar()
+# database = conectar[0]
+# cursor = conectar[1]
 
+# cursor.execute("SELECT * FROM USUARIOS")
+# print(cursor.fetchall())
+# # cursor.execute("DELETE FROM USUARIOS")
+# # database.commit()
+# # cursor.execute("SELECT * FROM USUARIOS")
+# # print(cursor.fetchall())
+
+
+# #Pruebo el cifrado
+# password = '3marc3110n1'
+# passCifrado = hashlib.sha256(password.encode()).hexdigest()
+# print(passCifrado)
+
+#Pruebo el login
+usr = modelo.Usuario('','','emarcelloni@agd.com.ar','3marc3110n1') #Creo el objeto pasando solo email y contraseña
+print(usr.identificar()[3]) #Llamo el metodo identificar.

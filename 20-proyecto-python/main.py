@@ -13,7 +13,6 @@ Acciones Disponibles:
 	-registro
 	-login
 """)
-
 accion = input('¿Que quieres hacer?: ')
 if accion == 'registro':
 	acc.registro()
