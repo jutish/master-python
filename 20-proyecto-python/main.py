@@ -5,7 +5,9 @@
 - Login: Permite loguearse
 - Una vez logueado podemos crear notas
 """
+from usuarios import acciones 
 
+acc = acciones.Acciones()
 print("""
 Acciones Disponibles:
 	-registro
@@ -14,7 +16,7 @@ Acciones Disponibles:
 
 accion = input('¿Que quieres hacer?: ')
 if accion == 'registro':
-	print('Vamos a registrarte en el sistema')
+	acc.registro()
 elif accion == 'login':
-	print('Identificate en el sistema')
+	acc.login()
 
