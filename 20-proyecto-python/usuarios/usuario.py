@@ -35,6 +35,6 @@ class Usuario:
 		query = "SELECT * FROM USUARIOS WHERE email = ? AND password = ?"
 		identificador = (self.email,passCifrado)
 		cursor.execute(query,identificador)
-		res = cursor.fetchone()
+		res = cursor.fetchone() #Devuelve una tupla
 		return res
 
