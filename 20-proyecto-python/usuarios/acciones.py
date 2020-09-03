@@ -2,7 +2,9 @@ import usuarios.usuario as modelo
 import notas.acciones as acciones
 
 class Acciones:
-	
+	def __init__(self):
+		self.intentos = 3
+
 	def registro(self):
 		print('\nVamos a registrarte en el sistema')
 		nombre = input('¿Cual es tu nombre?: ')
@@ -22,17 +24,22 @@ class Acciones:
 		print('\nIdentificate en el sistema')
 		email = input('Ingresa tu no correo electronico: ')
 		password = input('Ingresa tu password: ')
+		
 		try:
 			usr = modelo.Usuario('','',email,password)
 			login = usr.identificar()
 			if email == login[3]: #login[3] contiene el correo leido desde Base de Datos
 				print(f"\nBienvenido {login[1]} {login[2]}")
 				self.proximasAcciones(login)
-
 		except Exception as e:
-			print("Ha ocurrido un error: ",type(e).__name__)
-			print("Login incorrecto! Intenta mas tarde")
-				
+			#print("Ha ocurrido un error: ",type(e).__name__)
+			self.intentos -= 1
+			print(f"Login incorrecto! Tienes {self.intentos} intentos restantes")
+			if self.intentos > 0:
+				self.login()
+			else:
+				exit()	
+
 	def proximasAcciones(self,login):
 		print("""
 		Acciones Disponibles:
@@ -49,10 +56,10 @@ class Acciones:
 			hazEl.crear(login)
 			self.proximasAcciones(login)
 		elif accion == 'mostrar':
-			print("Mostrar")
+			hazEl.mostrar(login)
 			self.proximasAcciones(login)
 		elif accion == 'eliminar':
-			print("Eliminar")
+			hazEl.borrar(login)
 			self.proximasAcciones(login)
 		elif accion =='salir':
 			print("Salir")
