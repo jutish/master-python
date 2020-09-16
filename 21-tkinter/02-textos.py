@@ -15,5 +15,20 @@ texto.config(
 texto.pack()
 
 texto = Label(ventana,text='Mi nombre es Esteban Marcelloni')
-texto.pack(anchor = E) #Alinea el texto al Este. Ver imagen orientaciones_anchor para mas opciones.
+texto.config(
+	height = 4,
+	bg = 'orange',
+	font = ('Arial',15)
+)
+texto.pack(anchor = CENTER) #Alinea el texto al Este. Ver imagen orientaciones_anchor para mas opciones.
+
+texto = Label(ventana,text='Otro Texto')
+texto.config(
+	height = 2,
+	bg = 'red',
+	font = ('Arial',15),
+	cursor = 'spider'
+)
+texto.pack(anchor = E)
+
 ventana.mainloop()
