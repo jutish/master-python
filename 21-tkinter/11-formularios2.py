@@ -39,5 +39,30 @@ def mostrar(txt):
 	else:
 		profesion.set("")
 
+#Radio Button
+opcion = StringVar()
+Label(ventana,text="¿Cuál es tu genero?").grid(row=5)
+rd1=Radiobutton(ventana,
+			text="Masculino",
+			value = "Masculino",
+			variable=opcion)
+rd1.grid(row=6)
 
+rd2=Radiobutton(ventana,
+			text="Femenino",
+			value="Femenino",
+			variable=opcion,
+			)
+rd2.grid(row=7)
+rd1.select()
+rd2.deselect()
+Label(ventana,textvariable=opcion).grid(row=8)
+
+
+#OptionMenu
+Label(ventana,text="Selecciona una opcion: ").grid(row=9)
+opcionMenu = StringVar()
+opcionMenu.set("Op1")
+select = OptionMenu(ventana,opcionMenu,"Op1","Op2","Op3","Op4")
+select.grid(row=10)
 ventana.mainloop()
