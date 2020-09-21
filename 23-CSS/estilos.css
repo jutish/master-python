@@ -1,0 +1,41 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: lightgray;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#container{
+	width: 70%;
+	margin: 0px auto;
+	border:1px solid red;
+}
+
+header{
+	background: red;
+	height: 100px;
+	width: 100%;
+	text-align: center;
+	line-height: 100px;
+	color: white;
+	border-bottom: 3px dashed;
+}
+
+nav{
+	background: lightblue;
+	height: 50px;
+	border: 1px solid;
+}
+
+nav ul li{
+	float: left; /*Cada elemento flota y se pone uno al lado del otro*/
+	list-style: none; /*Quita el estilo de lista*/
+	margin: 10px;
+	line-height: 30px;
+}
+
+.clearfix{
+	clear: both; /*Cuando floto los elementos los de abajo no suben*/
+}
