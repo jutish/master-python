@@ -10,6 +10,11 @@
 	text-decoration: none;
 }
 
+p{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 body{
 	background-color: #f2f2f2;
 }
@@ -79,6 +84,8 @@ nav ul li a:hover{
 	color: white;
 	transition: all 300ms;
 }
+
+
 
 /*Efecto 3D*/
 .barra{

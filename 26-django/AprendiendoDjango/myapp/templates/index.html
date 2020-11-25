@@ -1,8 +1,16 @@
 {% extends 'layout.html' %}		
 {% block title %}
-Inicio
+{{title}}
 {% endblock title %}
 
 {% block content %}
-<h1 class="title">Inicio</h1>	
+{% comment %} Cualquier cosa aca adentro no se procesa {% endcomment%}
+<h1 class="title">{{title}}</h1>
+<p>Contenido de mi variable: {{miVar}}</p> {%comment%}Para usar una variable uso la {{nombre_variable}} {%endcomment%}	
+{%if nombre%}
+	<p>Mi nombre es: {{nombre}}</p>
+{%else%}
+	<strong>El nombre no existe</strong>	
+{%endif%}
+
 {% endblock content %}

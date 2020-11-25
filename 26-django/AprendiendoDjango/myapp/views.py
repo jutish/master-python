@@ -32,7 +32,11 @@ def index(request):
 		cont+=1
 	html +="</ul>"	
 	# return HttpResponse(layout+html)
-	return render(request,'index.html')
+	return render(request,'index.html',{ #Paso variables mediante un diccionario
+		'miVar':'Soy una variable de texto',
+		'title':'Inicio',
+		'nombre': 'Esteban'
+	})
 
 #El request se debe pasar a cada uno de los metodos
 def hola_mundo(request):

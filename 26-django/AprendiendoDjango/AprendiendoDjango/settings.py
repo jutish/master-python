@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp' #Agrego mi Aplicacion a esta config. para que me tome la carpeta template.
+    'myapp' #Agrego mi Aplicacion a esta config. para que me tome la carpeta templates.
 ]
 
 MIDDLEWARE = [
